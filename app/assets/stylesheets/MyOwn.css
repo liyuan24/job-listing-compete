@@ -1,0 +1,60 @@
+.new{
+	font-size: .80em;
+	color: #fff;
+	position: absolute;
+	right: -2px;
+	top: 6px;
+	border-radius: 3px;
+	width: 29px;
+	height: 12px;
+	background-color: rgb(255, 85, 0);
+	text-align: center;
+	line-height: 10px;
+}
+
+.wrap
+{
+	margin-left: 20em;
+	margin-right: 20em;
+	position: relative;
+}
+
+#nav-1{
+	margin-left: 10em;
+}
+
+li{
+	display: list-item;
+}
+
+.logo{
+	font-family: 'Hiragino Sans GB' Microsoft Yahei' 'serif';
+}
+
+.intro-header {
+    padding-top: 20px; 
+    padding-bottom: 400px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/intro-bg-1.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.box{
+	padding: 30px;
+}
+
+.btn-subsite{
+	list-style-type: none;
+	display: inline;
+	margin-left: 4em;
+}
+
+.field-li{
+	font-size: 150%;
+	display: inline;
+	/*width: 12%;*/
+	/*padding-left: 1em;
+	padding-right: 1.5em;*/
+}
