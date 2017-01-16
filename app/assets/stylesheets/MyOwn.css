@@ -58,3 +58,11 @@ li{
 	/*padding-left: 1em;
 	padding-right: 1.5em;*/
 }
+
+th{
+	text-align: center;
+}
+
+.center-text{
+	text-align: center;
+}
