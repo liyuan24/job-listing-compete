@@ -40,6 +40,30 @@ class JobsController < ApplicationController
 		redirect_to jobs_path, alert: "Job deleted"
 	end
 
+	def it
+		@jobs = Job.published.where(:field => "互联网")
+	end
+
+	def estate
+		@jobs = Job.published.where(:field => "房地产")
+	end
+
+	def finance
+		@jobs = Job.published.where(:field => "金融")
+	end
+
+	def consumption
+		@jobs = Job.published.where(:field => "消费品")
+	end
+
+	def manufacture
+		@jobs = Job.published.where(:field => "制造")
+	end
+
+	def chemistry
+		@jobs = Job.published.where(:field => "化工")
+	end
+
 	private
 
 	def job_params

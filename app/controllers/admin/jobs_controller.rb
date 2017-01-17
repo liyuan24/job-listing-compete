@@ -53,6 +53,30 @@ class Admin::JobsController < ApplicationController
 		redirect_to admin_jobs_path
 	end
 
+	def it
+		@jobs = Job.where(:field => "互联网")
+	end
+
+	def estate
+		@jobs = Job.where(:field => "房地产")
+	end
+
+	def finance
+		@jobs = Job.where(:field => "金融")
+	end
+
+	def consumption
+		@jobs = Job.where(:field => "消费品")
+	end
+
+	def manufacture
+		@jobs = Job.where(:field => "制造")
+	end
+
+	def chemistry
+		@jobs = Job.where(:field => "化工")
+	end
+
 	private
 
 	def job_params
