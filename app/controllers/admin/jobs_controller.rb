@@ -1,4 +1,6 @@
 class Admin::JobsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :require_is_admin
 	def index
 		@jobs = Job.all
 	end
@@ -43,5 +45,11 @@ class Admin::JobsController < ApplicationController
 
 	def job_params
 		params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :location, :field)
+	end
+
+	def require_is_admin
+		if !current_user.admin?
+			redirect_to root_path
+		end
 	end
 end
