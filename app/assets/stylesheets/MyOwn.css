@@ -74,3 +74,27 @@ th{
 	margin-right: auto;
 	margin-top: 2.5em;
 }
+
+.log_in_page{
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+}
+
+.log_in_btn{
+	width: 20%;
+}
+
+.mt-3{
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	height: 3em;
+}
+
+log_in_sign_up{
+  	vertical-align: middle;
+  	margin-left: auto;
+  	margin-right: auto;
+}
