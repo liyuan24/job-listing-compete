@@ -2,7 +2,7 @@ class Admin::JobsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :require_is_admin
 	def index
-		@jobs = Job.all
+		@jobs = order_params
 	end
 
 	def show
@@ -62,6 +62,17 @@ class Admin::JobsController < ApplicationController
 	def require_is_admin
 		if !current_user.admin?
 			redirect_to root_path
+		end
+	end
+
+	def order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.all.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.all.order("wage_lower_bound DESC")
+		else
+			Job.all.recent
 		end
 	end
 end
