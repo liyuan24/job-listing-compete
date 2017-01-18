@@ -1,0 +1,14 @@
+<div class="row job-item">
+	<div class="col-md-2">
+		<img src=<%= job.logo %> >
+	</div>
+	<div class="col-md-6">
+		<h4 class="job-title"><%= link_to(job.title, job_path(job)) %></h4>
+		<%= job.wage_lower_bound %>-<%= job.wage_upper_bound %> | <%= job.location %> | <%= job.experience %>
+	</div>
+	<div class="col-md-2">
+		<h4 class="company_name"><%= link_to(job.company_name, "#") %></h4>
+		<%= job.field %>
+	</div>
+</div>
+<hr>

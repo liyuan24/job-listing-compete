@@ -41,6 +41,66 @@ li{
     height: 20px;
 }
 
+.it-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/it-1.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.finance-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/finance.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.estate-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/real-estate.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.chemistry-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/chemistry.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.manufacture-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/manufacture.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
+.consumption-background{
+	padding-top: 20px; 
+    padding-bottom: 600px;
+    text-align: center;
+    color: #f8f8f8;
+    background-image: url(/assets/consumption.jpg);
+    background-size: cover;
+    height: 20px;
+}
+
 .box{
 	padding: 30px;
 }
@@ -130,4 +190,25 @@ th{
 #ex6
 {
 	color: rgb(255, 112, 82);
+}
+
+
+
+img{
+	widht: 100px;
+	height: 50px;
+	padding-left: 3em;
+}
+
+.job-title{
+	margin-top: 0px;
+}
+
+.company_name{
+	margin-top: 0px;
+}
+
+.job-item{
+	margin-left: 3em;
+	margin-bottom: 3em;
 }

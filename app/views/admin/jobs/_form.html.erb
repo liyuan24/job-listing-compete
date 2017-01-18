@@ -6,6 +6,9 @@
 		<%= f.input :wage_lower_bound, :label => "薪资下限", input_html: {class: 'form-control'} %>
 		<%= f.input :field, input_html: {class: 'form-control'} %>
 		<%= f.input :location, input_html: {class: 'form-control'} %>
+		<%= f.input :logo, input_html: {class: 'form-control'} %>
+		<%= f.input :experience, input_html: {class: 'form-control'} %>
+		<%= f.input :company_name, input_html: {class: 'form-control'} %>
 	</div>
 	<%= f.submit "Submit", :disable_with => "Submitting...", class: "btn btn-default" %>
 <% end %>
