@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 			get :gz
 			get :hz
 		end
+		resources :resumes
   	end
   	namespace :bj do
   		resources :jobs do
