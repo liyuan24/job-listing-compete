@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-6 col-md-offset-3">
 		<h2 class="text-center">职位介绍</h2>
 		<hr>
 		<div class="panel panel-default">
@@ -36,5 +36,6 @@
 				<p class="text-center"><%= @job.location %></p>
 			</div>
 		</div>
+		<%= link_to("投递简历", new_job_resume_path(@job), class: "btn btn-primary btn-block") %>
 	</div>
 </div>
