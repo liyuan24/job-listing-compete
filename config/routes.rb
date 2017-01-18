@@ -38,4 +38,9 @@ Rails.application.routes.draw do
 		end
   	end
   end
+  resources :bj
+  resources :sh
+  resources :sz
+  resources :gz
+  resources :hz
 end
