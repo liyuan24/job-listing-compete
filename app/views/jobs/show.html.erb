@@ -1,43 +1,20 @@
-<div class="container-fluid">
-	<div class="col-md-6 col-md-offset-3">
-		<h2 class="text-center">职位介绍</h2>
-		<hr>
-		<div class="panel panel-default">
-			<div class="panel-heading text-center">
-				职位名称
-			</div>
-			<div class="panel-body">
-				<h3 class="text-center"><%= @job.title %></h3>
-			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading text-center">
-				职位介绍
-			</div>
-			<div class="panel-body">
-				<p class="text-center"><%= @job.description %></p>
-			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading text-center">
-				薪资
-			</div>
-			<div class="panel-body">
-				<p class="text-center">薪资上限： <%= @job.wage_upper_bound %></p>
-				<hr>
-				<p class="text-center">薪资下限： <%= @job.wage_lower_bound %></p>
-			</div>
-		</div>
-		<div class="panel panel-default text-center">
-			<div class="panel-heading">
-				坐标
-			</div>
-			<div class="panel-body">
-				<p class="text-center"><%= @job.location %></p>
-			</div>
-		</div>
-		<div>
-			<%= link_to("投递简历", new_job_resume_path(@job), class: "btn btn-primary btn-block") %>
-		</div>
+<div class="col-md-6 col-md-offset-3" id="job-show">
+	<div class="job-item-title col-md-12">
+		<h2 id="job-show-title"><%= @job.title %></h2>
+		<br>
+		<h4 id="job-company_name"><%= @job.company_name %></h4>
 	</div>
+	<div class="job-item-detail">
+		<p style="font-size: 1.5em; color: rgb(255, 127, 0);">薪资：<%= @job.wage_lower_bound %>-<%= @job.wage_upper_bound %></p>
+		<span style="font-size: 1.5em;"><i class="fa fa-map-marker" aria-hidden="true" style="color: black;"></i><%= @job.location %></span>
+		<span style="font-size: 1.5em;"><i class="fa fa-clock-o" aria-hidden="true"></i><%= @job.created_at.strftime("%d/%m/%Y") %></span>
+	</div>
+	<hr>
+	<div class="job-item-description">
+		<h3>职位描述</h3>
+		<p><%= @job.description %></p>
+	</div>
+</div>
+<div class="col-md-6 col-md-offset-3" id="job-item-button">
+	<%= link_to("投递简历", new_job_resume_path(@job), class: "btn btn-success btn-block") %>
 </div>
