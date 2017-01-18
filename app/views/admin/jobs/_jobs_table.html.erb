@@ -8,6 +8,7 @@
 		<%= link_to(job.title, admin_job_path(job)) %>
 	</td>
 	<td class="center-text"><%= job.created_at %></td>
+	<td class="center-text"><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
 	<td class="center-text"><%= job.wage_upper_bound %></td>
 	<td class="center-text"><%= job.wage_lower_bound %></td>
 	<td class="center-text"><%= job.location %></td>
