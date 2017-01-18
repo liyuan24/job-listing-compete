@@ -1,0 +1,23 @@
+<tr>
+	<td class="center-text">
+		<% if job.is_hidden %>
+			<i class="fa fa-lock" aria-hidden="true"></i>
+		<% else %>
+			<i class="fa fa-globe" aria-hidden="true"></i>
+		<% end %>
+		<%= link_to(job.title, admin_hz_job_path(job)) %>
+	</td>
+	<td class="center-text"><%= job.created_at %></td>
+	<td class="center-text"><%= job.wage_upper_bound %></td>
+	<td class="center-text"><%= job.wage_lower_bound %></td>
+	<td class="center-text"><%= job.location %></td>
+	<td class="center-text">
+		<%= link_to(edit_admin_hz_job_path(job), class: "btn btn-sm btn-default ") do %><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %>	
+		<%= link_to(admin_hz_job_path(job), class: "btn btn-sm btn-default ", method: :delete, data: {confirm: "Are you sure?"}) do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %>
+		<% if job.is_hidden %>	
+			<%= link_to(publish_admin_hz_job_path(job), class: "btn btn-sm btn-default ", method: :post) do %><i class="fa fa-eye" aria-hidden="true"></i><% end %>
+		<% else %>	
+			<%= link_to(hide_admin_hz_job_path(job), class: "btn btn-sm btn-default", method: :post) do %><i class="fa fa-eye-slash"></i><% end %>
+		<% end %>
+	</td>
+</tr>

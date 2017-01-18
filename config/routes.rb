@@ -37,6 +37,50 @@ Rails.application.routes.draw do
 			get :hz
 		end
   	end
+  	namespace :bj do
+  		resources :jobs do
+  			member do
+	  			post :publish
+	  			post :hide
+  			end
+  		end
+  	end
+
+  	namespace :sh do
+  		resources :jobs do
+  			member do
+	  			post :publish
+	  			post :hide
+  			end
+  		end
+  	end
+
+  	namespace :sz do
+  		resources :jobs do
+  			member do
+	  			post :publish
+	  			post :hide
+  			end
+  		end
+  	end
+
+  	namespace :gz do
+  		resources :jobs do
+  			member do
+	  			post :publish
+	  			post :hide
+  			end
+  		end
+  	end
+
+  	namespace :hz do
+  		resources :jobs do
+  			member do
+	  			post :publish
+	  			post :hide
+  			end
+  		end
+  	end
   end
   resources :bj
   resources :sh
