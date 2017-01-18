@@ -54,47 +54,47 @@ class Admin::JobsController < ApplicationController
 	end
 
 	def it
-		@jobs = Job.where(:field => "互联网")
+		@jobs = it_order_params
 	end
 
 	def estate
-		@jobs = Job.where(:field => "房地产")
+		@jobs = estate_order_params
 	end
 
 	def finance
-		@jobs = Job.where(:field => "金融")
+		@jobs = finance_order_params
 	end
 
 	def consumption
-		@jobs = Job.where(:field => "消费品")
+		@jobs = consumption_order_params
 	end
 
 	def manufacture
-		@jobs = Job.where(:field => "制造")
+		@jobs = manufacture_order_params
 	end
 
 	def chemistry
-		@jobs = Job.where(:field => "化工")
+		@jobs = chemistry_order_params
 	end
 
 	def bj
-		@jobs = Job.where(:location => "北京")
+		@jobs = bj_order_params
 	end
 
 	def sh
-		@jobs = Job.where(:location => "上海")
+		@jobs = sh_order_params
 	end
 
 	def sz
-		@jobs = Job.where(:location => "深圳")
+		@jobs = sz_order_params
 	end
 
 	def gz
-		@jobs = Job.where(:location => "广州")
+		@jobs = gz_order_params
 	end
 
 	def hz
-		@jobs = Job.where(:location => "杭州")
+		@jobs = hz_order_params
 	end
 
 	private
@@ -117,6 +117,127 @@ class Admin::JobsController < ApplicationController
 			Job.all.order("wage_lower_bound DESC")
 		else
 			Job.all.recent
+		end
+	end
+
+	def it_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "互联网").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "互联网").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "互联网").recent
+		end
+	end
+
+	def finance_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "金融").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "金融").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "金融").recent
+		end
+	end
+
+	def manufacture_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "制造").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "制造").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "制造").recent
+		end
+	end
+
+	def consumption_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "消费品").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "消费品").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "消费品").recent
+		end
+	end
+
+	def estate_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "房地产").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "房地产").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "房地产").recent
+		end
+	end
+
+	def chemistry_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "化工").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "化工").order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "化工").recent
+		end
+	end
+
+	def bj_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:location => "北京").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:location => "北京").order("wage_lower_bound DESC")
+		else
+			Job.where(:location => "北京").recent
+		end
+	end
+
+	def sh_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:location => "上海").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:location => "上海").order("wage_lower_bound DESC")
+		else
+			Job.where(:location => "上海").recent
+		end
+	end
+
+	def sz_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:location => "深圳").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:location => "深圳").order("wage_lower_bound DESC")
+		else
+			Job.where(:location => "深圳").recent
+		end
+	end
+
+	def gz_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:location => "广州").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:location => "广州").order("wage_lower_bound DESC")
+		else
+			Job.where(:location => "广州").recent
+		end
+	end
+
+	def hz_order_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:location => "杭州").order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:location => "杭州").order("wage_lower_bound DESC")
+		else
+			Job.where(:location => "杭州").recent
 		end
 	end
 end
