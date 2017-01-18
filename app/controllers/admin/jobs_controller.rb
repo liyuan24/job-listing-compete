@@ -77,6 +77,26 @@ class Admin::JobsController < ApplicationController
 		@jobs = Job.where(:field => "化工")
 	end
 
+	def bj
+		@jobs = Job.where(:location => "北京")
+	end
+
+	def sh
+		@jobs = Job.where(:location => "上海")
+	end
+
+	def sz
+		@jobs = Job.where(:location => "深圳")
+	end
+
+	def gz
+		@jobs = Job.where(:location => "广州")
+	end
+
+	def hz
+		@jobs = Job.where(:location => "杭州")
+	end
+
 	private
 
 	def job_params

@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 			get :consumption
 			get :manufacture
 			get :chemistry
+			get :bj
+			get :sh
+			get :sz
+			get :gz
+			get :hz
 		end
   end
   namespace :admin do
@@ -25,6 +30,11 @@ Rails.application.routes.draw do
 			get :consumption
 			get :manufacture
 			get :chemistry
+			get :bj
+			get :sh
+			get :sz
+			get :gz
+			get :hz
 		end
   	end
   end
