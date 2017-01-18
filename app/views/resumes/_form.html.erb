@@ -1,6 +1,7 @@
 <%= simple_form_for [@job, @resume] do |f| %>
 	<div class="form-group">
-		<%= f.input :content, input_html: { class: "form-control" } %>
+		<%= f.input :content, required: false, input_html: { class: "form-control" } %>
+		<%= f.input :attachment %>
 	</div>
 	<%= f.submit "提交简历", :disable_with => "Submitting...", class: "btn btn-success btn-block" %>
 <% end %>
