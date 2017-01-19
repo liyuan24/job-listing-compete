@@ -41,27 +41,27 @@ class JobsController < ApplicationController
 	end
 
 	def it
-		@jobs = Job.published.where(:field => "互联网")
+		@jobs = it_params
 	end
 
 	def estate
-		@jobs = Job.published.where(:field => "房地产")
+		@jobs = estate_params
 	end
 
 	def finance
-		@jobs = Job.published.where(:field => "金融")
+		@jobs = finance_params
 	end
 
 	def consumption
-		@jobs = Job.published.where(:field => "消费品")
+		@jobs = consumption_params
 	end
 
 	def manufacture
-		@jobs = Job.published.where(:field => "制造")
+		@jobs = manufacture_params
 	end
 
 	def chemistry
-		@jobs = Job.published.where(:field => "化工")
+		@jobs = chemistry_params
 	end
 
 	private
@@ -78,6 +78,72 @@ class JobsController < ApplicationController
 			Job.published.order("wage_lower_bound DESC")
 		else
 			Job.published
+		end
+	end
+
+	def it_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "互联网").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "互联网").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "互联网").published
+		end
+	end
+
+	def finance_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "金融").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "金融").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "金融").published
+		end
+	end
+
+	def estate_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "房地产").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "房地产").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "房地产").published
+		end
+	end
+
+	def consumption_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "消费品").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "消费品").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "消费品").published
+		end
+	end
+
+	def chemistry_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "化工").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "化工").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "化工").published
+		end
+	end
+
+	def manufacture_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.where(:field => "制造").published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.where(:field => "制造").published.order("wage_lower_bound DESC")
+		else
+			Job.where(:field => "制造").published
 		end
 	end
 end
