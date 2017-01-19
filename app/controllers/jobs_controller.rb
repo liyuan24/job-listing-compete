@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_action :validates_search_key, only: [:search]
 	def index
 		@jobs = order_params
 	end
@@ -62,6 +63,18 @@ class JobsController < ApplicationController
 
 	def chemistry
 		@jobs = chemistry_params
+	end
+
+	def search
+		if @query_string.present?
+			@jobs = search_params
+		end
+	end
+
+	protected
+
+	def validates_search_key
+		@query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
 	end
 
 	private
@@ -144,6 +157,17 @@ class JobsController < ApplicationController
 			Job.where(:field => "制造").published.order("wage_lower_bound DESC")
 		else
 			Job.where(:field => "制造").published
+		end
+	end
+
+	def search_params
+		case params[:order]
+		when "wage_upper_bound"
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_upper_bound DESC")
+		when "wage_lower_bound"
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_lower_bound DESC")
+		else
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published
 		end
 	end
 end

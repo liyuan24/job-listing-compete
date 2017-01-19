@@ -1,0 +1,14 @@
+<div class="row search_bar">
+    <div class="col-sm-9 col-lg-8 col-lg-offset-2">
+      <%= form_tag search_jobs_path, method: :get, class: 'questions-search-form'  do %>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="职位，公司，城市，行业...">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </span>
+        </div>
+      <% end %>
+    </div>
+</div>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 			get :sz
 			get :gz
 			get :hz
+			get :search
 		end
 		resources :resumes
   end
