@@ -1,3 +1,6 @@
+body{
+	height: 800px;
+}
 .new{
 	font-size: .80em;
 	color: #fff;
@@ -255,4 +258,9 @@ img{
 	border: 2px solid #F9F9F9;
 	background-color: #fff;
 	padding: 2em;
+}
+
+.search-page{
+	background-image: url(https://concat.lietou-static.com/dev/www/pc/revs/v3/build/images/pages/event/landingpage/gain/bg_search11_0f4bfc1e.jpg);
+	background-position: center;
 }
