@@ -86,88 +86,88 @@ class JobsController < ApplicationController
 	def order_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.published.order("wage_upper_bound DESC")
+			Job.published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.published.order("wage_lower_bound DESC")
+			Job.published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.published
+			Job.published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def it_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "互联网").published.order("wage_upper_bound DESC")
+			Job.where(:field => "互联网").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "互联网").published.order("wage_lower_bound DESC")
+			Job.where(:field => "互联网").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "互联网").published
+			Job.where(:field => "互联网").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def finance_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "金融").published.order("wage_upper_bound DESC")
+			Job.where(:field => "金融").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "金融").published.order("wage_lower_bound DESC")
+			Job.where(:field => "金融").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "金融").published
+			Job.where(:field => "金融").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def estate_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "房地产").published.order("wage_upper_bound DESC")
+			Job.where(:field => "房地产").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "房地产").published.order("wage_lower_bound DESC")
+			Job.where(:field => "房地产").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "房地产").published
+			Job.where(:field => "房地产").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def consumption_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "消费品").published.order("wage_upper_bound DESC")
+			Job.where(:field => "消费品").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "消费品").published.order("wage_lower_bound DESC")
+			Job.where(:field => "消费品").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "消费品").published
+			Job.where(:field => "消费品").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def chemistry_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "化工").published.order("wage_upper_bound DESC")
+			Job.where(:field => "化工").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "化工").published.order("wage_lower_bound DESC")
+			Job.where(:field => "化工").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "化工").published
+			Job.where(:field => "化工").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def manufacture_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:field => "制造").published.order("wage_upper_bound DESC")
+			Job.where(:field => "制造").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:field => "制造").published.order("wage_lower_bound DESC")
+			Job.where(:field => "制造").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:field => "制造").published
+			Job.where(:field => "制造").published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 
 	def search_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_upper_bound DESC")
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_lower_bound DESC")
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published
+			Job.ransack({:title_or_field_or_location_or_company_name_cont => @query_string}).result(distinct: true).published.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 end

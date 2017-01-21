@@ -15,3 +15,6 @@
 <div class="col-md-8 col-md-offset-2" style="margin-top: 3em;">
 	<%= render :partial => "job_item", :collection => @jobs, :as => :job %>
 </div>
+<div class="flickr_pagination">
+	<%= will_paginate @jobs %>
+</div>

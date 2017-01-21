@@ -1,23 +1,7 @@
 <div class="container-fluid search-page" style="padding-left: 0; padding-right: 0; margin-top: 0; height: 90%;">
 	<%= render "common/search_bar" %>
 	<% if @jobs.count > 0 %>
-		<div class="col-md-2 pull-right">
-			<ul class="nav nav-pills nav-stacked sidebar_1">
-				<li class="dropdown">
-					<button href="#" class=" btn btn-primary btn-block" data-toggle="dropdown" id="dropdown_1" aria-haspopup=true aria-expanded=true >
-						排序<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="#dropdown_1">
-						<li><%= link_to("按薪资上限排序", search_jobs_path(:q => @query_string, :order => "wage_upper_bound")) %></li>
-						<li><%= link_to("按薪资下限排序", search_jobs_path(:q => @query_string, :order => "wage_lower_bound")) %></li>
-						<li><%= link_to("按创建时间排序", search_jobs_path(:q => @query_string)) %></li>
-					</ul>
-				</li>		
-			</ul>
-		</div>
-		<div class="col-md-8 col-md-offset-2" style="margin-top: 3em;">
-			<%= render :partial => "job_item", :collection => @jobs, :as => :job %>
-		</div>
+		<%= render "common/show_jobs" %>
 	<% else %>
 		<h3 class="text-center" style="margin-top: 10%; color: white;">抱歉，没有搜索到与关键词<b>"<%= @query_string %>"</b>有关的职位</h3>
 	<% end %>
