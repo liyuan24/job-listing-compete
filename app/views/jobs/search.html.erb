@@ -7,9 +7,9 @@
 						排序<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" aria-labelledby="#dropdown_1">
-						<li><%= link_to("按薪资上限排序", search_jobs_path(:order => "wage_upper_bound")) %></li>
-						<li><%= link_to("按薪资下限排序", search_jobs_path(:order => "wage_lower_bound")) %></li>
-						<li><%= link_to("按创建时间排序", search_jobs_path) %></li>
+						<li><%= link_to("按薪资上限排序", search_jobs_path(:q => @query_string, :order => "wage_upper_bound")) %></li>
+						<li><%= link_to("按薪资下限排序", search_jobs_path(:q => @query_string, :order => "wage_lower_bound")) %></li>
+						<li><%= link_to("按创建时间排序", search_jobs_path(:q => @query_string)) %></li>
 					</ul>
 				</li>		
 			</ul>
