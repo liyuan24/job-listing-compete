@@ -1,0 +1,14 @@
+<div class="col-md-2 pull-right">
+	<ul class="nav nav-pills nav-stacked sidebar_1">
+		<li class="dropdown">
+			<button href="#" class=" btn btn-primary btn-block" data-toggle="dropdown" id="dropdown_1" aria-haspopup=true aria-expanded=true >
+				排序<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="#dropdown_1">
+				<li><%= link_to("按薪资上限排序", bj_index_path(:order => "wage_upper_bound")) %></li>
+				<li><%= link_to("按薪资下限排序", bj_index_path(:order => "wage_lower_bound")) %></li>
+				<li><%= link_to("按创建时间排序", bj_index_path) %></li>
+			</ul>
+		</li>		
+	</ul>
+</div>

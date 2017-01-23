@@ -50,11 +50,11 @@ class HzController < ApplicationController
 	def order_params
 		case params[:order]
 		when "wage_upper_bound"
-			Job.where(:location => "杭州").published.order("wage_upper_bound DESC")
+			Job.where(:location => "杭州").published.order("wage_upper_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		when "wage_lower_bound"
-			Job.where(:location => "杭州").published.order("wage_lower_bound DESC")
+			Job.where(:location => "杭州").published.order("wage_lower_bound DESC").paginate(:page => params[:page], :per_page => 10)
 		else
-			Job.where(:location => "杭州").published.recent
+			Job.where(:location => "杭州").published.recent.paginate(:page => params[:page], :per_page => 10)
 		end
 	end
 end
